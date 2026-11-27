@@ -1,6 +1,8 @@
 (() => {
   const gameScripts = [
   "engine/mobile-share.js",
+  "engine/mobile-controls-fix.js",
+  "engine/mobile-audio-fix.js",
   "engine/part-01.js",
   "engine/part-02.js",
   "engine/part-03.js",
@@ -19,7 +21,7 @@
   ],
   "engine/part-07.js",
   [
-    "engine/part-08.js.chunk-01.bin"
+    "engine/part-08.js.mobile.chunk-01.bin"
   ],
   [
     "engine/part-09.js.chunk-01.bin",
