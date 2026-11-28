@@ -363,7 +363,7 @@ kbd { display: inline-block; font: 500 10px/1 var(--f-mono); color: var(--bone);
 <script>
 (() => {
   const scriptNames = [
-    'mobile-share.js', 'mobile-controls-fix.js', 'mobile-audio-fix.js',
+    'mobile-share.js', 'mobile-controls-v2.js', 'mobile-audio-fix.js',
     'part-01.js', 'part-02.js', 'part-03.js',
     'part-04.js', 'part-05.js', 'part-06.js', 'part-07.js',
     'part-08.js', 'part-09.js', 'part-10.js', 'part-11.js'
@@ -391,6 +391,7 @@ kbd { display: inline-block; font: 500 10px/1 var(--f-mono); color: var(--bone);
   const retry = document.getElementById('boot-retry');
   const utf8 = new TextDecoder();
   const mirror = 'https://cdn.jsdelivr.net/gh/longxia998/evacuation-day-game@67a6f78f410db8727403319401b3f10057e6f1fc/engine/';
+  const releaseMirror = 'https://cdn.jsdelivr.net/gh/longxia998/evacuation-day-game@main/engine/';
   let finished = false;
 
   retry.addEventListener('click', () => location.reload());
@@ -418,7 +419,7 @@ kbd { display: inline-block; font: 500 10px/1 var(--f-mono); color: var(--bone);
     const local = 'engine/' + path;
     const attempts = [
       [local, 14000, 'default'],
-      [mirror + path, 12000, 'default'],
+      [(path === 'mobile-controls-v2.js' ? releaseMirror : mirror) + path, 12000, 'default'],
       [local, 24000, 'reload']
     ];
     for (const [url, timeout, cache] of attempts) {
